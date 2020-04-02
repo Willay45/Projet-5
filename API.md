@@ -8,8 +8,13 @@
 ####Read
 - Read all user :
 
+    
     /user
 
+- Read all product :
+
+    
+    /product
 
 ####Update
 
