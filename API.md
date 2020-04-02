@@ -8,7 +8,7 @@
 ####Read
 - Read all user :
 
-    http://localhost:8080/api/user
+    /user
 
 
 ####Update

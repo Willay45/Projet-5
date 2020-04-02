@@ -4,7 +4,7 @@
 
 Clone this repo.
 
-For the back directory in `src`, create a file `.env` directory next to `server.js` with this content:
+For the back directory, create a file `.env` next to `server.js` with this content:
 
     PORT=8080
     
@@ -13,7 +13,7 @@ For the back directory in `src`, create a file `.env` directory next to `server.
     DB_PASSWORD=password
     DB_NAME=db_name
     
-And in directory `front` and `back`, run:
+In directory `front` and `back`, run:
 
     npm install
     
