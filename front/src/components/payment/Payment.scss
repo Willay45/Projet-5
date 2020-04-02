@@ -1,0 +1,56 @@
+.payment-order{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  h1{
+    color: black;
+    margin: 0;
+    font-size: 2.5em;
+  }
+
+  .payment-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    justify-content: center;
+    margin-right: 10%;
+    h2 {
+      color: black;
+      font-size: 1.3em;
+      text-align: left;
+    }
+
+
+    .form-container{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color: grey;
+      font-size: 1em;
+
+       label{
+        font-size: 20px;
+        margin-top: 2%;
+        input {
+          font-size: 18px;
+
+        }
+      }
+
+      .expiration{
+        background-color: red;
+        width: 25%;
+      }
+
+    }
+
+}
+
+
+}

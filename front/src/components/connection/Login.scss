@@ -1,0 +1,51 @@
+
+.login-container-user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://cdn.pixabay.com/photo/2017/02/07/09/02/wood-2045380__340.jpg") ;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+  .container-login-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #848484;
+    height: 35%;
+    width: 20%;
+    h2 {
+      margin-top: 40px;
+      font-size: 2em;
+      text-transform: uppercase;
+      color: white;
+    }
+    .connect-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      input {
+        font-size: 16px;
+        border: none;
+        width: 60%;
+        height: 10%;
+        margin: 15px;
+      }
+      .connect-submit {
+        width: 40%;
+        height: 10%;
+        margin: 10px;
+        color: white;
+        font-size: 18px;
+        background-color: #624242;
+      }
+      .connect-submit:active {
+        transform: scale(.95);
+      }
+    }
+  }
+
+}
