@@ -11,6 +11,7 @@ import Payment from "./components/payment/Payment";
 import UserInfo from "./components/user/user-info/UserInfo";
 import UserOrder from "./components/user/user-order/UserOrder";
 import Basket from "./components/basket/Basket";
+import OrderDescription from "./components/orderdescription/OrderDescription";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path='/user/info' component={UserInfo}/>
         <Route path='/user/order' component={UserOrder}/>
         <Route path='/basket' component={Basket}/>
+        <Route path='/order-description' component={OrderDescription}/>
+
       </Switch>
     </div>
   );
