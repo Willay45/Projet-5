@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
+import OrderDescription from "./components/orderdescription/OrderDescription";
 import HomePage from './components/home-page/HomePage';
 import ProductList from './components/product-list/ProductList';
 import RegisterUser from './components/LoginUser/RegisterUser';
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={HomePage} />
+              <Route exact path="/" component={HomePage} />
         <Route path="/product-list" component={ProductList} />
         <Route path="/login-user" component={RegisterUser} />
         <Route path="/login-driver" component={RegisterPartner} />
@@ -30,6 +31,7 @@ function App() {
         <Route path="/basket" component={Basket} />
         <Route path="/upload/image" component={AddImage} />
         <Route path="/add-product" component={AddProduct} />
+        <Route path='/order-description' component={OrderDescription}/>
       </Switch>
     </div>
   );

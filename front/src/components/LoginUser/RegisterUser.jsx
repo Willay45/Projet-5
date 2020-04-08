@@ -3,6 +3,7 @@ import './RegisterUser.scss';
 
 const RegisterUser = () => {
 
+
   return (
     <div className="register-container-user">
       <div className="container-register-user">
@@ -32,7 +33,6 @@ const RegisterUser = () => {
             <label className="register-user-label" htmlFor="address">Adresse :</label>
             <input className="register-user-input" type="text"/>
           </div>
-
           <input className="register-user-submit" type="submit"/>
         </form>
 

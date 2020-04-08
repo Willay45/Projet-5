@@ -16,4 +16,15 @@ User.findAll = result => {
   });
 };
 
+
+User.create = (newUser, result) => {
+  db.query('INSERT INTO user SET ?', [newUser], (error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+    return result(null, { id: dbResult.insertId, ...newUser });
+  });
+};
+
+
 module.exports = User;
