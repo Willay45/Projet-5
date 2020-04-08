@@ -28,7 +28,6 @@ function App() {
         <Route path='/user/order' component={UserOrder}/>
         <Route path='/basket' component={Basket}/>
         <Route path='/order-description' component={OrderDescription}/>
-
       </Switch>
     </div>
   );
