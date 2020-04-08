@@ -12,6 +12,7 @@ import UserInfo from './components/user/user-info/UserInfo';
 import UserOrder from './components/user/user-order/UserOrder';
 import Basket from './components/basket/Basket';
 import AddImage from './components/admin/add-image/AddImage';
+import AddProduct from './components/admin/add-product/AddProduct';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/user/order" component={UserOrder} />
         <Route path="/basket" component={Basket} />
         <Route path="/upload/image" component={AddImage} />
+        <Route path="/add-product" component={AddProduct} />
       </Switch>
     </div>
   );
