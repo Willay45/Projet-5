@@ -14,7 +14,7 @@ exports.create = (request, response) => {
         email: request.body.email ? request.body.email : null,
         address: request.body.address ? request.body.address : null,
         password: request.body.password ? request.body.password : null,
-        role: request.body.role ? request.body.role : null
+        role: 3
     });
 
     User.create(user, (error, data) => {
