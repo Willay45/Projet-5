@@ -2,37 +2,39 @@ import React, {useState} from "react";
 import './RegisterDriver.scss';
 
 const RegisterDriver = () =>{
-    const[firstname, setFirstname] = useState();
-    const[lastname,setLastname] = useState();
-    const[address, setAddress] = useState();
-    const[password, setPassword] = useState();
-    const[numberSiret, setNumberSire] = useState();
-    const[rib, setRib] = useState;
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
+  const [address, setAddress] = useState();
+  const [password, setPassword] = useState();
+  const [numberSiret, setNumberSire] = useState();
+  const [rib, setRib] = useState;
 
-const createDriver = async event => {
+  const createDriver = async event => {
     event.preventDefault();
     const driver = {
-        firstname,
-        lastname,
-        email,
-        address,
-        password,
-        numberSiret,
-        rib
+      firstname,
+      lastname,
+      email,
+      address,
+      password,
+      numberSiret,
+      rib
     };
     try {
-        await postPartner(user);
-    }   catch (error) {
-        alert('error')
+      await postPartner(user);
+    } catch (error) {
+      alert('error');
     }
 };
 
-    return (
-        <div className="register-container-driver">
-            <div className="container-register-driver">
-                <h2>Devenez partenaire</h2>
-                <form className="register-driver-form">
-                    <div className="register-driver-container-input" onSubmit={createDriver}>
+  return (
+    <div className="register-container-driver">
+      <div className="container-register-driver">
+        <h2>Devenez partenaire</h2>
+        <form className="register-driver-form">
+          <div
+            className="register-driver-container-input"
+            onSubmit={createDriver}
                         <label className="register-driver-label" htmlFor="name">Nom :</label>
                         <input className="register-driver-input" type="name" value={lastname} onChange={event => setLastname(event.target.value)}/>
                     </div>
@@ -67,7 +69,6 @@ const createDriver = async event => {
                     <input className="register-driver-submit" type="submit"/>
                 </form>
             </div>
-        </div>
     )
 };
 
