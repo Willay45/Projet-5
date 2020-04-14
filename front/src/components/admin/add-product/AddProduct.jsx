@@ -71,7 +71,7 @@ const AddProduct = () => {
 
         {tags
           ? tags.map(tag => (
-            <span>
+              <span>
                 <label htmlFor="tag">{tag.name}</label>
                 <input
                   type="checkbox"

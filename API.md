@@ -31,9 +31,11 @@
 ####Create
 - Post product in database :
 
+
     postProduct(product)
     
 - Save image in directory :
+
 
     saveProduct(img)
 ####Read

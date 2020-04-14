@@ -27,3 +27,12 @@ export const postProduct = (product, tags) => {
 export const getTag = () => {
   return axios.get(`${url}/tag`).then(response => response.data);
 };
+
+export const login = user => {
+  axios.post(`${url}/user/login`, user).then(response => {
+    const token = response.data;
+    localStorage.setItem('token', token);
+    const dataPayload = token.split('.')[1];
+    console.log(atob(dataPayload));
+  });
+};
