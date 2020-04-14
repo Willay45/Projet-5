@@ -5,6 +5,7 @@ const User = require('../models/user.models.js');
 const saltRounds = 10;
 
 exports.create = (request, response) => {
+
   if (!request.body) {
     return response.status(400).send({
       message: 'Content can not be empty!'

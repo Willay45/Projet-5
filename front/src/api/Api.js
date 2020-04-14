@@ -2,6 +2,13 @@ import axios from 'axios';
 
 const url = 'http://localhost:8080/api';
 
+
+export const postDriver = driver => {
+  axios.post(`${url}/driver`, driver).then(response => {
+    console.log(response.statusText);
+  });
+};
+
 export const postUser = user => {
   axios.post(`${url}/user`, user).then(response => {
     console.log(response.statusText);
