@@ -40,4 +40,33 @@ Product.findAll = result => {
   });
 };
 
+Product.findProductTag = result => {
+  db.query(
+    'SELECT p.name, p.description, p.url, p.quantity, t.tag_id, ta.tag_name FROM product as p JOIN product_has_tag as t ON t.product_id = p.id JOIN tag as ta ON ta.id = t.tag_id',
+    (error, dbResult) => {
+      if (error) {
+        return result(error, null);
+      }
+      return result(null, dbResult);
+    }
+  );
+};
+
+Product.findById = (productId, result) => {
+  db.query(
+    `SELECT * FROM product WHERE id = ${productId}`,
+    (error, dbResult) => {
+      if (error) {
+        return result(error, null);
+      }
+
+      if (dbResult.length) {
+        return result(null, dbResult[0]);
+      }
+
+      return result({ kind: 'not_found' }, null);
+    }
+  );
+};
+
 module.exports = Product;

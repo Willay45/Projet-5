@@ -1,10 +1,13 @@
-import React from 'react';
-import ProductBasket from "./product-basket/ProductBasket";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import ProductBasket from './product-basket/ProductBasket';
 import './Basket.scss';
-import Navbar from "../navbar/Navbar";
+import Navbar from '../navbar/Navbar';
 
 const Basket = () => {
+  const [userID, setUserId] = useState(localStorage.getItem('token'));
+  console.log(atob(userID.split('.')[1]));
+
   return (
     <div>
       <Navbar />

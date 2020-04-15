@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-              <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
         <Route path="/product-list" component={ProductList} />
         <Route path="/login-user" component={RegisterUser} />
         <Route path="/login-driver" component={RegisterPartner} />
@@ -31,7 +31,7 @@ function App() {
         <Route path="/basket" component={Basket} />
         <Route path="/upload/image" component={AddImage} />
         <Route path="/add-product" component={AddProduct} />
-        <Route path='/order-description' component={OrderDescription}/>
+        <Route path="/order-description" component={OrderDescription} />
       </Switch>
     </div>
   );

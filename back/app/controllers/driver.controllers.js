@@ -21,7 +21,8 @@ exports.create = (request, response) => {
   Driver.create(driver, (error, data) => {
     if (error) {
       return response.status(500).send({
-        message: error.message || 'Some error occurred while creating the driver.'
+        message:
+          error.message || 'Some error occurred while creating the driver.'
       });
     }
     return response.send(data);

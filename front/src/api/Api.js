@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const url = 'http://localhost:8080/api';
 
-
 export const postDriver = driver => {
   axios.post(`${url}/driver`, driver).then(response => {
     console.log(response.statusText);
@@ -39,7 +38,19 @@ export const login = user => {
   axios.post(`${url}/user/login`, user).then(response => {
     const token = response.data;
     localStorage.setItem('token', token);
-    const dataPayload = token.split('.')[1];
-    console.log(atob(dataPayload));
   });
+};
+
+export const getProductTag = () => {
+  return axios
+    .get(`${url}/product/product-tag`)
+    .then(response => response.data);
+};
+
+export const getProduct = () => {
+  return axios.get(`${url}/product`).then(response => response.data);
+};
+
+export const getProductById = id => {
+  return axios.get(`${url}/product/${id}`).then(response => response.data);
 };
