@@ -54,3 +54,9 @@ export const getProduct = () => {
 export const getProductById = id => {
   return axios.get(`${url}/product/${id}`).then(response => response.data);
 };
+
+export const postProductIntoBasket = data => {
+  axios
+    .post(`${url}/basket`, data)
+    .then(response => console.log(response.statusText));
+};
