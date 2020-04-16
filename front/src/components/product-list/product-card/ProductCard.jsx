@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './ProductCard.css';
 
-const ProductCard = ({ name, url, id }) => {
+const ProductCard = ({ name, url, id, quantity }) => {
   return (
     <NavLink
+      className={quantity <= 0 ? 'not-active' : 'active'}
       to={{ pathname: '/product-description', state: { idProduct: id } }}
       style={{ margin: '10px' }}
     >

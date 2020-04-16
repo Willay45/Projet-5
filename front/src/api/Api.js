@@ -60,3 +60,7 @@ export const postProductIntoBasket = data => {
     .post(`${url}/basket`, data)
     .then(response => console.log(response.statusText));
 };
+
+export const getBasket = userId => {
+  return axios.get(`${url}/basket/${userId}`).then(response => response.data);
+};

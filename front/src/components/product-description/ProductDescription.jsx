@@ -8,6 +8,7 @@ const ProductDescription = () => {
   const location = useLocation();
   const [id] = useState(location.state.idProduct);
   const [product, setProduct] = useState();
+  const [quantity, setQuantity] = useState();
   useEffect(() => {
     (async () => {
       setProduct(await getProductById(id));
@@ -15,15 +16,18 @@ const ProductDescription = () => {
   }, [id]);
 
   const addToBasket = async () => {
-    const userId = window
-      .atob(localStorage.getItem('token').split('.')[1])
-      .split(',')[0]
-      .split(':')[1];
+    const user = JSON.parse(
+      window.atob(localStorage.getItem('token').split('.')[1])
+    );
     const data = {
-      user_id: userId,
-      product_id: id
+      user_id: user.id,
+      product_id: id,
+      quantity,
+      name: product.name,
+      price: product.price,
+      url: product.url
     };
-    if (userId) {
+    if (localStorage.getItem('token')) {
       try {
         await postProductIntoBasket(data);
         alert('Add to basket');
@@ -48,10 +52,17 @@ const ProductDescription = () => {
         <div className="product-description-description">
           <h2>{product ? product.name : null}</h2>
           <p>{product ? product.description : null}</p>
-          <form className="product-description-form" onSubmit={()=> addToBasket()}>
+          <form
+            className="product-description-form"
+            onSubmit={() => addToBasket()}
+          >
             <div>
               <label htmlFor="number">Quantiter :</label>
-              <input type="number" />
+              <input
+                type="number"
+                value={quantity}
+                onChange={event => setQuantity(event.target.value)}
+              />
             </div>
             <input
               className="product-description-submit"

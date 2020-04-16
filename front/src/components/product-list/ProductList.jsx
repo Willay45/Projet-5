@@ -81,6 +81,7 @@ const ProductList = () => {
                   id={product.id}
                   name={product.name}
                   url={product.url}
+                  quantity={product.quantity}
                 />
               ))
             : 'Products not found'}
