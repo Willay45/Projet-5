@@ -54,7 +54,7 @@ const Basket = () => {
               </div>
               <p>{`Totals: ${totalPrice} €`}</p>
             </div>
-            <NavLink className="link-basket" activeClassName="active" to="/">
+            <NavLink className="link-basket" activeClassName="active" to="/order-description">
               <p>Commander</p>
             </NavLink>
           </div>
