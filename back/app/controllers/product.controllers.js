@@ -36,3 +36,34 @@ exports.findAll = (request, response) => {
     }
   });
 };
+
+exports.findProductTag = (request, response) => {
+  Product.findProductTag((error, data) => {
+    if (error) {
+      response.status(500).send({
+        message:
+          error.message || 'Some error occurred while retrieving Product.'
+      });
+    } else {
+      response.send(data);
+    }
+  });
+};
+
+exports.findById = (request, response) => {
+  Product.findById(request.params.productId, (error, dbResult) => {
+    if (error) {
+      if (error.kind === 'not_found') {
+        response.status(404).send({
+          message: `Not found product with id ${request.params.productId}.`
+        });
+      } else {
+        response.status(500).send({
+          message: `Error retrieving product with id ${request.params.productId}`
+        });
+      }
+    } else {
+      response.send(dbResult);
+    }
+  });
+};

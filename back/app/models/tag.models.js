@@ -1,7 +1,7 @@
 const db = require('./database.model.js');
 
 const Tag = function(tag) {
-  this.name = tag.name;
+  this.tag_name = tag.tag_name;
 };
 
 Tag.findAll = result => {
