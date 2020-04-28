@@ -25,7 +25,7 @@ const HomePage = () => {
                 to={{
                   pathname: '/product-list',
                   state: {
-                    titleList: 'Sodas'
+                    titleList: 'Softs'
                   }
                 }}
               >
