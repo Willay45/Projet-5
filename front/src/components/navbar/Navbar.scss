@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+
 .navbar{
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  background-color: red;
+  background-color: whitesmoke;
+  box-shadow: 10px 5px 10px #2c2b2b;
+  position: fixed;
 
   .nav-link {
     text-decoration: none;
@@ -13,6 +17,7 @@
   h1{
     margin: 0;
     font-size: 2.6em;
+    font-family: 'Rufina', serif;
     margin-left: 15px;
   }
   .navbar-button-container{
@@ -20,6 +25,8 @@
     .nav-link{
       display: flex;
       text-decoration: none;
+
+      font-family: 'Rufina', serif;
       color: black;
       margin: 0 25px ;
     }
@@ -38,16 +45,23 @@
   display: flex;
   flex-direction: column;
   width: 10%;
-  position: absolute;
+  top: 7.2%;
+  position: fixed;
   right: 0;
-  background-color: red;
+  background-color: whitesmoke;
+  font-family: 'Rufina', serif;
   color: black;
+  box-shadow: 10px 5px 10px #161616;
   .nav-link{
+    pointer-events: none;
+    cursor: default;
     display: flex;
     text-decoration: none;
     color: black;
+    font-family: 'Rufina', serif;
   }
   h2 {
+    font-family: 'Rufina', serif;
     text-align: justify;
     margin-left: 20px;
   }
@@ -57,18 +71,23 @@
   transition: opacity 2s ease-in-out;
   opacity: 1;
   display: flex;
+  position: fixed;
   flex-direction: column;
   width: 10%;
-  position: absolute;
+  top: 7.2%;
   right: 0;
-  background-color: red;
+  background-color: whitesmoke;
+  box-shadow: 10px 5px 10px #161616;
+  font-family: 'Rufina', serif;
   color: black;
   .nav-link{
     display: flex;
     text-decoration: none;
+    font-family: 'Rufina', serif;
     color: black;
   }
   h2 {
+    font-family: 'Rufina', serif;
     text-align: justify;
     margin-left: 20px;
   }
