@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .not-active {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
-    color: black;
+    color: red;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.active {
+    text-decoration: none;
+    color: #545454;
+    font-family: 'Open Sans', sans-serif;
 }
