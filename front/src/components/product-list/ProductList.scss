@@ -71,4 +71,10 @@
   .product-card-container::-webkit-scrollbar {
     display: none;
   }
+  .popup {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 100%;
+  }
 }

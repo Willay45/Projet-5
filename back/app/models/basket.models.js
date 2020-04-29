@@ -4,9 +4,6 @@ const Basket = function(basket) {
   this.user_id = basket.user_id;
   this.product_id = basket.product_id;
   this.quantity = basket.quantity;
-  this.price = basket.price;
-  this.url = basket.url;
-  this.name = basket.name;
 };
 
 Basket.create = (newBasket, result) => {

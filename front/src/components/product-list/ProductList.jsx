@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import ProductCard from './product-card/ProductCard';
 import './ProductList.scss';
 import { getProduct } from '../../api/Api';
 import Navbar from '../navbar/Navbar';
+import ProductDescription from '../product-description/ProductDescription';
 
 const ProductList = () => {
-  const location = useLocation();
-  const titleprops = location;
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState('Alcools');
   const [products, setProducts] = useState();
+  const [addBasket, setAddBasket] = useState(false);
+  const [idProduct, setIdProduct] = useState();
+
   useEffect(() => {
     (async () => {
       setProducts(await getProduct());
     })();
-    setTitle(titleprops.state.titleList);
   }, []);
 
   return (
@@ -74,9 +74,15 @@ const ProductList = () => {
                     url={product.url}
                     quantity={product.quantity}
                     price={product.price}
+                    setAddBasket={setAddBasket}
+                    addBasket={addBasket}
+                    setIdProduct={setIdProduct}
                   />
                 ))
               : 'Products not found'}
+          </div>
+          <div className="popup">
+            {addBasket ? <ProductDescription id={idProduct} setAddBasket={setAddBasket} addBasket={addBasket} /> : null}
           </div>
         </div>
       </div>

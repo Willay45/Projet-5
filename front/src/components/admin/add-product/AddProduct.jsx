@@ -59,7 +59,7 @@ const AddProduct = () => {
           type="file"
           name="file"
           onChange={onChangeHandler}
-          multiple="true"
+          multiple="false"
         />
 
         <label htmlFor="text">Description</label>
