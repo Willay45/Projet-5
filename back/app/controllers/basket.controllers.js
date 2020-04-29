@@ -10,10 +10,7 @@ exports.create = (request, response) => {
   const basket = new Basket({
     user_id: request.body.user_id ? request.body.user_id : null,
     product_id: request.body.product_id ? request.body.product_id : null,
-    quantity: request.body.quantity ? request.body.quantity : null,
-    price: request.body.price ? request.body.price : null,
-    url: request.body.url ? request.body.url : null,
-    name: request.body.name ? request.body.name : null
+    quantity: request.body.quantity ? request.body.quantity : null
   });
 
   Basket.create(basket, (error, data) => {

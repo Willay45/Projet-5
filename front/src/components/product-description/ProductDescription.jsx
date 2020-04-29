@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './ProductDescription.scss';
-import { useLocation, useHistory } from 'react-router-dom';
-import { getProductById, postProductIntoBasket } from '../../api/Api';
+import { useHistory } from 'react-router-dom';
+import { getProductById } from '../../api/Api';
 
-const ProductDescription = () => {
+const ProductDescription = ({ id, setAddBasket, addBasket }) => {
   const history = useHistory();
-  const location = useLocation();
-  const [id] = useState(location.state.idProduct);
-  const [product, setProduct] = useState();
+  const [products, setProduct] = useState();
   const [quantity, setQuantity] = useState();
   useEffect(() => {
     (async () => {
@@ -15,63 +13,54 @@ const ProductDescription = () => {
     })();
   }, [id]);
 
-  const addToBasket = async () => {
-    const user = JSON.parse(
-      window.atob(localStorage.getItem('token').split('.')[1])
-    );
-    const data = {
+  const addToBasket = () => {
+    const user = localStorage.getItem('token')
+      ? JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]))
+      : false;
+    const basket = localStorage.getItem('basket')
+      ? JSON.parse(localStorage.getItem('basket'))
+      : [];
+
+    const product = {
       user_id: user.id,
       product_id: id,
-      quantity,
-      name: product.name,
-      price: product.price,
-      url: product.url
+      product_name: products.name,
+      product_price: products.price,
+      quantity
     };
+
     if (localStorage.getItem('token')) {
-      try {
-        await postProductIntoBasket(data);
-        alert('Add to basket');
-        history.push('/product-list', 'Alcools');
-      } catch (error) {
-        alert('Some error occurred while add product into basket.');
-      }
+      basket.push(product);
+      localStorage.setItem('basket', JSON.stringify(basket));
+      alert('Add to basket');
+      setAddBasket(!addBasket);
     } else {
-      history.push('/login-user');
+      history.push('/login');
     }
   };
   return (
     <div className="product-description">
-      <h1>Description produit</h1>
-      <div className="product-description-container">
-        <div className="product-description-img">
-          <img
-            src="https://www.mhdfrance.fr/wp-content/uploads/2019/04/MoetChandon-ImperialBrut-37-NK-T-ERetailKit-ST-OP-IN-PNG.png"
-            alt="Produits"
+      <h2>{products ? products.name : null}</h2>
+      <p>{products ? products.description : null}</p>
+      <p>{`Prix : ${products ? products.price : null} €`}</p>
+      <form onSubmit={() => addToBasket()}>
+        <div>
+          <label htmlFor="number">Quantiter :</label>
+          <input
+            className="quantity"
+            type="number"
+            value={quantity}
+            onChange={event => setQuantity(event.target.value)}
           />
         </div>
-        <div className="product-description-description">
-          <h2>{product ? product.name : null}</h2>
-          <p>{product ? product.description : null}</p>
-          <form
-            className="product-description-form"
-            onSubmit={() => addToBasket()}
-          >
-            <div>
-              <label htmlFor="number">Quantiter :</label>
-              <input
-                type="number"
-                value={quantity}
-                onChange={event => setQuantity(event.target.value)}
-              />
-            </div>
-            <input
-              className="product-description-submit"
-              type="submit"
-              value="Ajouter au pannier"
-            />
-          </form>
+        <div className="product-description-submit-container">
+          <input
+            className="product-description-submit"
+            type="submit"
+            value="Ajouter au panier"
+          />
         </div>
-      </div>
+      </form>
     </div>
   );
 };

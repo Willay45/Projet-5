@@ -9,6 +9,7 @@
 }
 
 .active {
+    cursor: pointer;
     text-decoration: none;
     color: #545454;
     font-family: 'Open Sans', sans-serif;

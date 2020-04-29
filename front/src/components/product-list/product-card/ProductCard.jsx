@@ -1,12 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './ProductCard.css';
 
-const ProductCard = ({ name, url, id, quantity, price }) => {
+const ProductCard = ({
+  name,
+  url,
+  id,
+  quantity,
+  price,
+  addBasket,
+  setAddBasket,
+  setIdProduct
+}) => {
   return (
-    <NavLink
+    <div
+      onClick={() => {
+        setAddBasket(!addBasket);
+        setIdProduct(id);
+      }}
       className={quantity <= 0 ? 'not-active' : 'active'}
-      to={{ pathname: '/product-description', state: { idProduct: id } }}
       style={{ margin: '10px' }}
     >
       <p>{name}</p>
@@ -15,7 +26,7 @@ const ProductCard = ({ name, url, id, quantity, price }) => {
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNGn74mtRL_UDFGf6jYxaOaKCUQFRlL9O8QvnMRHfZu5KbCFfs"
         alt="Product"
       />
-    </NavLink>
+    </div>
   );
 };
 

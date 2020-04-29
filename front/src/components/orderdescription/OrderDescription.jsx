@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './OrderDescription.scss';
 import { getBasket } from '../../api/Api';
 
-const OrderDescription = () => {
-  const [basket, setBasket] = useState();
+const OrderDescription = ({ wantBooking, setWantBooking, baskets}) => {
+  const [basket, setBasket] = useState(baskets);
   const currentDate = new Date();
   useEffect(() => {
     const user = JSON.parse(
@@ -15,35 +15,23 @@ const OrderDescription = () => {
   }, []);
   return (
     <div className="order-description">
-      <div className="title-description">
-        <h1>Récapitulatif de votre commande</h1>
-      </div>
-      <div className="info-description">
-        {basket
-          ? basket.map(product => (
-              <div>{`${product.name} x${product.quantity}: ${product.price} €/u`}</div>
-            ))
-          : null}
-      </div>
-      <div>
-        <form>
-          <span>
-            <label htmlFor="address">Addresse</label>
-            <input type="text" />
-          </span>
-          <span>
-            <label htmlFor="date">Date de livraison</label>
-            <input min={currentDate} type="date" />
-          </span>
-          <span>
-            <label htmlFor="time">heure de livraison</label>
-            <input min="17h00" max="3h00" type="time" />
-          </span>
-          <span>
-            <input type="submit" />
-          </span>
-        </form>
-      </div>
+      <form>
+        <span>
+          <label htmlFor="address">Addresse</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label htmlFor="date">Date de livraison</label>
+          <input min={currentDate} type="date" />
+        </span>
+        <span>
+          <label htmlFor="time">Heure de livraison</label>
+          <input min="17h00" max="3h00" type="time" />
+        </span>
+        <span>
+          <input className="submit" type="submit" onClick={() => setWantBooking(!wantBooking)} />
+        </span>
+      </form>
     </div>
   );
 };
