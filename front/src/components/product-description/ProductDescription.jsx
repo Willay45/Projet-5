@@ -20,7 +20,6 @@ const ProductDescription = ({ id, setAddBasket, addBasket }) => {
     const basket = localStorage.getItem('basket')
       ? JSON.parse(localStorage.getItem('basket'))
       : [];
-
     const product = {
       user_id: user.id,
       product_id: id,
