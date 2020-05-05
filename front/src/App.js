@@ -15,6 +15,7 @@ import Basket from './components/basket/Basket';
 import AddProduct from './components/admin/add-product/AddProduct';
 import HomeAdmin from './components/admin/HomeAdmin';
 import UsersList from './components/admin/users-list/UsersList';
+import HomeDriver from './components/driver/HomeDriver';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/order-description" component={OrderDescription} />
         <Route path="/admin/dashboard" component={HomeAdmin} />
         <Route path="/admin/users-list" component={UsersList} />
+        <Route path="/driver/dashboard" component={HomeDriver} />
       </Switch>
     </div>
   );
