@@ -1,28 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .register-container-user {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("https://cdn.pixabay.com/photo/2017/02/07/09/02/wood-2045380__340.jpg");
-  background-position: center;
-  background-size: cover;
   height: 100vh;
   width: 100%;
 
   h2 {
+    font-family: 'Rufina: 700', serif;
     font-size: 2em;
-    text-transform: uppercase;
   }
 
   .container-register-user {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
     width: 25%;
     height: 55%;
-    background-color: #848484;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #5454544d;
 
+    label {
+      text-align: left;
+      font-family: 'Open Sans', sans-serif;
+    }
     .register-user-form {
       display: flex;
       flex-direction: column;
@@ -35,7 +39,8 @@
         display: flex;
         align-items: center;
         justify-content: left;
-        margin: 15px 0;
+        margin: 15px;
+
         .register-user-label {
           font-size: 18px;
           width: 40%;
@@ -43,18 +48,35 @@
         .register-user-input {
           font-size: 16px;
           border: none;
-          margin-left: 5px;
+
         }
       }
       .register-user-submit {
+        margin: 10px;
         border: none;
+        padding: 5px 0;
         font-size: 18px;
-        width: 40%;
+        background: #545454;
+        border-radius: 5px;
+        width: 30%;
+        font-family: 'Rufina', serif;
         color: white;
-        margin-top: 40px;
-        background: #624242;
       }
       .register-user-submit:active {
+        transform: scale(.95);
+      }
+      .nav-link-log {
+        font-family: 'Rufina', serif;
+        text-decoration: none;
+        color: black;
+        margin: 10px;
+        padding: 5px 0;
+        font-size: 18px;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30%;
+      }
+      .nav-link-log:active {
         transform: scale(.95);
       }
     }

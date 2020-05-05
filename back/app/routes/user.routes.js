@@ -3,7 +3,10 @@ const user = require('../controllers/user.controllers.js');
 
 const router = express.Router();
 
-// Read all User
 router.get('/', user.findAll);
+
+router.post('/login', user.login);
+
+router.post('/', user.create);
 
 module.exports = router;

@@ -1,67 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .product-description {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("https://cdn.pixabay.com/photo/2017/02/07/09/02/wood-2045380__340.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100vh;
-  h1 {
-    color: white;
-    margin: 0;
-    font-size: 2.5em;
-  }
-  .product-description-container {
-    display: flex;
-    height: 90%;
-    .product-description-img {
-      width: 50%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 100%;
-      }
+  text-align: left;
+  width: 20%;
+  background-color: #545454;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Rufina: 700', serif;
+
+  form {
+    .quantity {
+      width: 20%;
+      margin-left: 10px;
     }
-    .product-description-description {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      text-align: right;
-      color: white;
-      justify-content: center;
-      margin-right: 10%;
-      h2 {
-        font-size: 2.3em;
-        text-align: left;
-      }
-      p {
-        font-size: 20px;
-      }
-      .product-description-form {
-        font-size: 20px;
-        margin-top: 5%;
-        input {
-          font-size: 18px;
-          margin-left: 2%;
-        }
-        .product-description-submit {
-          margin-top: 4%;
-          padding: 10px 15px;
-          font-size: 20px;
-          cursor: pointer;
-          border: none;
-          color: white;
-          background-color: #624242;
-        }
-        .product-description-submit:active {
-          transform: scale(.95);
-        }
-      }
+
+  }
+  .product-description-submit-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    .product-description-submit {
+      margin-top: 15px;
+      border: none;
+      background-color: green;
+      width: 55%;
+      border-radius: 10px;
+      padding: 10px;
     }
   }
 

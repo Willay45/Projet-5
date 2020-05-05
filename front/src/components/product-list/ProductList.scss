@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .product-list {
   display: flex;
@@ -5,38 +7,36 @@
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  background-image: url("https://cdn.pixabay.com/photo/2017/02/07/09/02/wood-2045380__340.jpg");
-  background-size: cover;
-  background-position: center center;
+
   .product-list-nav {
-
-    h2 {
-      margin: 50px 0;
-      text-align: center;
-      font-size: 2.5em;
-      color: white;
-    }
-
+    margin-top: 100px;
     div {
       display: flex;
       p {
+        font-family: 'Rufina: 700', serif;
         cursor: pointer;
         margin: 30px;
         font-size: 2em;
-        color: white;
       }
     }
   }
 
   .product-list-container {
+    margin-top: 50px;
     display: flex;
     width: 100%;
+    height: 60%;
+    justify-content: space-between;
   }
 
   .product-list-tags {
     display: flex;
     flex-direction: column;
+    border: solid 1px black;
+    border-radius: 10px;
     width: 20%;
+    overflow: hidden;
+    overflow-y: scroll;
     span {
       display: flex;
       align-items: center;
@@ -46,18 +46,35 @@
         height: 40%;
       }
       p {
+        font-family: 'Rufina', serif;
         margin-left: 10px;
         font-size: 2em;
-        color: white;
+        color: #545454;
       }
     }
+  }
+  .product-list-tags::-webkit-scrollbar {
+    display: none;
   }
 
   .product-card-container {
     display: flex;
-    align-items: center;
+    background-color: #5454544d;
+    border-radius: 10px;
     justify-content: center;
-    width: 60%;
+    width: 70%;
+    margin-right: 7%;
     flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .product-card-container::-webkit-scrollbar {
+    display: none;
+  }
+  .popup {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 100%;
   }
 }

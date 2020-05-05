@@ -1,12 +1,32 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import './ProductCard.css';
 
-const ProductCard = () => {
+const ProductCard = ({
+  name,
+  url,
+  id,
+  quantity,
+  price,
+  addBasket,
+  setAddBasket,
+  setIdProduct
+}) => {
   return (
-    <NavLink to="/product-description"
-      style={{margin: "10px"}}>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNGn74mtRL_UDFGf6jYxaOaKCUQFRlL9O8QvnMRHfZu5KbCFfs" alt="Product"/>
-    </NavLink>
+    <div
+      onClick={() => {
+        setAddBasket(!addBasket);
+        setIdProduct(id);
+      }}
+      className={quantity <= 0 ? 'not-active' : 'active'}
+      style={{ margin: '10px' }}
+    >
+      <p>{name}</p>
+      <p>{`${price}€`}</p>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNGn74mtRL_UDFGf6jYxaOaKCUQFRlL9O8QvnMRHfZu5KbCFfs"
+        alt="Product"
+      />
+    </div>
   );
 };
 
