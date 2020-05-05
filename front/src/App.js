@@ -12,7 +12,6 @@ import Payment from './components/payment/Payment';
 import UserInfo from './components/user/user-info/UserInfo';
 import UserOrder from './components/user/user-order/UserOrder';
 import Basket from './components/basket/Basket';
-import AddImage from './components/admin/add-image/AddImage';
 import AddProduct from './components/admin/add-product/AddProduct';
 import HomeAdmin from './components/admin/HomeAdmin';
 import UsersList from './components/admin/users-list/UsersList';
@@ -31,7 +30,6 @@ function App() {
         <Route path="/user/info" component={UserInfo} />
         <Route path="/user/order" component={UserOrder} />
         <Route path="/basket" component={Basket} />
-        <Route path="/upload/image" component={AddImage} />
         <Route path="/admin/add-product" component={AddProduct} />
         <Route path="/order-description" component={OrderDescription} />
         <Route path="/admin/dashboard" component={HomeAdmin} />
