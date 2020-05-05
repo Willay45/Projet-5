@@ -1,0 +1,36 @@
+
+
+.slide-bar-admin-container {
+  position: relative;
+  .slide-bar-admin {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    top: 10px;
+    left: 0;
+    padding: 10px;
+
+    .nav-link-admin {
+      text-decoration: none;
+      color: black;
+      margin: 10px;
+      width: 100%;
+    }
+
+    .open-bar {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      font-size: 1.5em;
+      .nav-link-admin:hover {
+        background-color: #5454544d;
+      }
+    }
+    .close-bar {
+      display: none;
+    }
+
+  }
+}

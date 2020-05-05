@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getTag, postProduct, saveProduct } from '../../../api/Api';
+import SlideBarAdmin from '../slidebar-admin/SlideBarAdmin';
+import './AddProduct.scss';
 
 const AddProduct = () => {
   const [name, setName] = useState();
@@ -39,51 +41,54 @@ const AddProduct = () => {
 
   return (
     <div>
-      <form onSubmit={createProduct}>
-        <label htmlFor="name">Nom</label>
-        <input
-          type="name"
-          value={name}
-          onChange={event => setName(event.target.value)}
-        />
+      <SlideBarAdmin />
+      <div>
+        <form onSubmit={createProduct}>
+          <label htmlFor="name">Nom</label>
+          <input
+            type="name"
+            value={name}
+            onChange={event => setName(event.target.value)}
+          />
 
-        <label htmlFor="quantity">Quantiter</label>
-        <input
-          type="number"
-          value={quantity}
-          onChange={event => setQuantity(event.target.value)}
-        />
+          <label htmlFor="quantity">Quantiter</label>
+          <input
+            type="number"
+            value={quantity}
+            onChange={event => setQuantity(event.target.value)}
+          />
 
-        <label>Upload Your File </label>
-        <input
-          type="file"
-          name="file"
-          onChange={onChangeHandler}
-          multiple="false"
-        />
+          <label>Upload Your File </label>
+          <input
+            type="file"
+            name="file"
+            onChange={onChangeHandler}
+            multiple="false"
+          />
 
-        <label htmlFor="text">Description</label>
-        <textarea
-          name="text"
-          value={description}
-          onChange={event => setDescription(event.target.value)}
-        />
+          <label htmlFor="text">Description</label>
+          <textarea
+            name="text"
+            value={description}
+            onChange={event => setDescription(event.target.value)}
+          />
 
-        {tags
-          ? tags.map(tag => (
+          {tags
+            ? tags.map(tag => (
               <span>
-                <label htmlFor="tag">{tag.tag_name}</label>
-                <input
-                  type="checkbox"
-                  value={tag.id}
-                  onClick={event => idTags.push(event.target.value)}
-                />
-              </span>
-            ))
-          : null}
+                  <label htmlFor="tag">{tag.tag_name}</label>
+                  <input
+                    type="checkbox"
+                    value={tag.id}
+                    onClick={event => idTags.push(event.target.value)}
+                  />
+                </span>
+              ))
+            : null}
 
-        <input type="submit" />
-      </form>
+          <input type="submit" />
+        </form>
+      </div>
     </div>
   );
 };
