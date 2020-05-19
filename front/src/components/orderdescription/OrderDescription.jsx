@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './OrderDescription.scss';
-import { getBasket } from '../../api/Api';
+import { postProductIntoBasket } from '../../api/Api';
 
 const OrderDescription = ({ wantBooking, setWantBooking, baskets}) => {
-  const [basket, setBasket] = useState(baskets);
   const currentDate = new Date();
-  useEffect(() => {
-    const user = JSON.parse(
-      window.atob(localStorage.getItem('token').split('.')[1])
-    );
-    (async () => {
-      setBasket(await getBasket(user.id));
-    })();
-  }, []);
+
+  const sendBooking = async () => {
+    console.log(baskets);
+    await postProductIntoBasket(baskets);
+  };
   return (
     <div className="order-description">
       <form>
@@ -29,7 +25,10 @@ const OrderDescription = ({ wantBooking, setWantBooking, baskets}) => {
           <input min="17h00" max="3h00" type="time" />
         </span>
         <span>
-          <input className="submit" type="submit" onClick={() => setWantBooking(!wantBooking)} />
+          <input className="submit" type="submit" onClick={() => {
+            setWantBooking(!wantBooking);
+            sendBooking();
+          }} />
         </span>
       </form>
     </div>

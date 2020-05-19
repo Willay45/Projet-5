@@ -7,13 +7,9 @@ exports.create = (request, response) => {
     });
   }
 
-  const basket = new Basket({
-    user_id: request.body.user_id ? request.body.user_id : null,
-    product_id: request.body.product_id ? request.body.product_id : null,
-    quantity: request.body.quantity ? request.body.quantity : null
-  });
+  const { baskets } = request.body;
 
-  Basket.create(basket, (error, data) => {
+  Basket.create(baskets, (error, data) => {
     if (error) {
       return response.status(500).send({
         message:
